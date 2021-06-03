@@ -32,12 +32,12 @@ const paginationMethods = {
   // Next page
   nextPage: () => {
     paginationMethods.currentPage++
-    return Pagination
+    return paginationMethods
   },
   // Prev page
   prevPage: () => {
     paginationMethods.currentPage++
-    return Pagination
+    return paginationMethods
   },
   // First page
   firstPage: () => {
