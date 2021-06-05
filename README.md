@@ -3,6 +3,8 @@
 ## Source map
 
 * Source
+  * jsInfo
+    * 1.withPrototype.js
   * 1.pagination.js
   * 2.airplane.js
 * README.md
@@ -37,3 +39,30 @@
       * If a plane lands, its isFlying property is set to `false`.
 
 [Decision](./src/2.airplane.js)
+
+---
+
+### __JS INFO__
+
+---
+
+1. Here’s the code that creates a pair of objects, then modifies them.
+Which values are shown in the process?
+
+```js
+  let animal = {
+    jumps: null
+  };
+  let rabbit = {
+    __proto__: animal,
+    jumps: true
+  };
+
+  console.log(rabbit.jumps) // ? (1)
+  delete rabbit.jumps
+  console.log(rabbit.jumps) // ? (2)
+  delete animal.jumps
+  console.log(rabbit.jumps) // ? (3)
+```
+
+[Decision](./src/1.withPrototype.js)
