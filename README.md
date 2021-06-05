@@ -7,6 +7,7 @@
     * 1.withPrototype.js
     * 2.searchingAlgs.js
     * 3.whatDoesItWrite.js
+    * 4.hamsters.js
     * getOwnProp.js
   * 1.pagination.js
   * 2.airplane.js
@@ -117,3 +118,35 @@ If we call `rabbit.eat()`, which object receives the full property: `animal` or 
 ```
 
 [Decision](./src/jsInfo/3.whatDoesItWrite.js)
+
+---
+
+4. We have `two hamsters`: `speedy` and `lazy `inheriting from the general `hamster` object.
+When we feed one of them, the other one is also full. Why? How can we fix it?
+
+```js
+  let hamster = {
+    stomach: [],
+
+    eat(food) {
+      this.stomach.push(food);
+    }
+  };
+
+  let speedy = {
+    __proto__: hamster
+  };
+
+  let lazy = {
+    __proto__: hamster
+  };
+
+  // This one found the food
+  speedy.eat("apple");
+  alert( speedy.stomach ); // apple
+
+  // This one also has it, why? fix please.
+  alert( lazy.stomach ); // apple
+```
+
+[Decision](./src/jsInfo/4.hamsters.js)
