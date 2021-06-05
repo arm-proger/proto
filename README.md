@@ -6,6 +6,7 @@
   * jsInfo
     * 1.withPrototype.js
     * 2.searchingAlgs.js
+    * 3.whatDoesItWrite.js
     * getOwnProp.js
   * 1.pagination.js
   * 2.airplane.js
@@ -67,7 +68,7 @@ Which values are shown in the process?
   console.log(rabbit.jumps) // ? (3)
 ```
 
-[Decision](./src/1.withPrototype.js)
+[Decision](./src/jsInfo/1.withPrototype.js)
 
 ---
 
@@ -94,4 +95,25 @@ Which values are shown in the process?
 
 * Use `__proto__` to assign prototypes in a way that any property lookup will follow the path: `pockets` → `bed` → `table` → `head`. For instance, pockets.pen should be 3 (found in table), and bed.glasses should be 1 (found in head).
 
-[Decision](./src/2.searchingAlgs.js)
+[Decision](./src/jsInfo/2.searchingAlgs.js)
+
+---
+
+3. We have `rabbit` inheriting from `animal`.
+If we call `rabbit.eat()`, which object receives the full property: `animal` or `rabbit`?
+
+```js
+  let animal = {
+    eat() {
+      this.full = true;
+    }
+  };
+
+  let rabbit = {
+    __proto__: animal
+  };
+
+  rabbit.eat();
+```
+
+[Decision](./src/jsInfo/3.whatDoesItWrite.js)
